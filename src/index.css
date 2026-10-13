@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+:root {
+  --text: #57534e;
+  --text-h: #1c1917;
+  --bg: #fafaf9;
+  --border: #e7e5e4;
+  --code-bg: #f5f5f4;
+  --accent: #1c1917;
+  --accent-bg: rgba(28, 25, 23, 0.05);
+  --accent-border: rgba(28, 25, 23, 0.2);
+  --social-bg: rgba(245, 245, 244, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.06) 0 10px 15px -3px, rgba(0, 0, 0, 0.03) 0 4px 6px -2px;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  letter-spacing: 0.18px;
+  color-scheme: light;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+body[data-theme="dark"] {
+  color-scheme: dark;
+  --text: #a8a29e;
+  --text-h: #f5f5f4;
+  --bg: #121212;
+  --border: #262626;
+  --code-bg: #1a1a1a;
+  --accent: #f5f5f4;
+  --accent-bg: rgba(245, 245, 244, 0.08);
+  --accent-border: rgba(245, 245, 244, 0.25);
+  --social-bg: rgba(38, 38, 38, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+}
+
+body[data-theme="dark"] #social .button-icon {
+  filter: invert(1) brightness(2);
+}
+
+body[data-theme="light"] {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 2rem;
+}
+
+body[data-theme="light"] #root,
+body[data-theme="dark"] #root {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+
+.app-text { color: inherit; }
+.app-text--body { font: inherit; }
+.app-text--heading {
+  font-family: var(--heading);
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+.app-text--subheading {
+  file-family: var(--heading);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.25;
+}
+.app-text--caption { font-size: 0.8rem; line-height: 1.4; }
+.app-text--label { font-size: 0.875rem; font-weight: 600; }
+.app-text--code { font-family: var(--mono); font-size: 0.9em; }
+.app-text--default { color: var(--text); }
+.app-text--heading-color { color: var(--text-h); }
+.app-text--muted { color: var(--text); opacity: 0.75; }
+.app-text--accent { color: var(--accent); }
