@@ -16,7 +16,7 @@ export const RevenueBarChart: React.FC<RevenueBarChartProps> = ({ data }) => {
           <XAxis dataKey="title" stroke="#888888" fontSize={12} tickLine={false} axisLine={false} />
           <YAxis stroke="#888888" fontSize={12} tickLine={false} axisLine={false} />
           <Tooltip />
-          <Bar dataKey="price" fill="var(--text)" radius={[4, 4, 0, 0]} />
+          <Bar dataKey="price" fill="var(--text)" />
         </BarChart>
       </ResponsiveContainer>
     </div>

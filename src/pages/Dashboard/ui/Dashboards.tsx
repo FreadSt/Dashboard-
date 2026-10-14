@@ -1,9 +1,10 @@
 import { CardWidget } from "@/shared/Card/ui/CardWidget"
-import { useProduct, useProducts } from "@/entities/product/api/product.queries"
+import { useProducts } from "@/entities/product/api/product.queries"
 import { RevenueBarChart, type ChartDataPoint } from "@/widgets/dashboard/dashboard-revenue/RevenueChartWidget"
 import { Text } from "@/shared/Text/Text"
-import { SekeletonCard } from "@/shared/Card/ui/SkeletonCardView"
 import { LeadsWidget } from './../../../widgets/dashboard/leads/LeadsWidget';
+import { DealsWidget } from "@/widgets/dashboard/deals/DealsWidget"
+import { UsersWidget } from "@/widgets/dashboard/users/Users";
 
 export const Dashboard = () => {
   const { data: product, isLoading, error } = useProducts()
@@ -20,12 +21,8 @@ export const Dashboard = () => {
       <Text align="left" className="mb-3" variant="subheading">Dashboard</Text>
       <div className="grid grid-span-3 gap-3">
         <LeadsWidget />
-        <CardWidget title="asdasdsad2" className="h-20 w-full border p-3">
-
-        </CardWidget>
-        <CardWidget title="asdasdsad3" className="h-20 w-full border p-3">
-
-        </CardWidget>
+        <DealsWidget />
+        <UsersWidget />
 
         <div className="grid col-span-3 gap-3">
           <CardWidget title="Product price" isLoading={isLoading} error={error} className="p-3 border">
