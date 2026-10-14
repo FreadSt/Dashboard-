@@ -1,7 +1,11 @@
+import { Text } from "@/shared/Text/Text"
+import CustomersKanban from "@/widgets/leads/kanban/KanbanBoard"
+
 export const Leads = () => {
   return(
     <div>
-      <h2>Leads</h2>
+      <Text variant="subheading">Leads</Text>
+      <CustomersKanban />
     </div>
   )
 }
